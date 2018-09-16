@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/rightsRecord.js"></script>
+    <style>
+        .xwtable {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+
+        .xwtable thead th,
+        .xwtable thead td {
+            font-size: 12px;
+            color: #333333;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .xwtable tbody tr {
+            background: #fff;
+            font-size: 12px;
+            color: #666666;
+        }
+
+        .xwtable tbody tr.alt-row {
+            background: #afe111;
+        }
+
+        .xwtable td {
+            line-height: 20px;
+            text-align: left;
+            padding: 4px 10px 3px 10px;
+            height: 18px;
+            border: 1px solid #ccc;
+        }
+
+        .xwtable td.red {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="left">
+            <table class="xwtable">
+                <thead id="theadRights">
+
+                </thead>
+                <tbody id="tbodyRights">
+
+                </tbody>
+                <tfoot id="tfootRights">
+                </tfoot>
+            </table>
+        </div>
+        <div id="right">
+
+        </div>
+    </div>
+    <div id="payDetail">
+        <table class="xwtable">
+            <thead>
+                <th colspan="2">
+                    第一次维权支出
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>矿泉水</td>
+                    <td>380</td>
+                </tr>
+                <tr>
+                    <td>相片，复印资料</td>
+                    <td>376</td>
+                </tr>
+                <tr>
+                    <td>买业主号码</td>
+                    <td>600</td>
+                </tr>
+                <tr>
+                    <td>小红旗</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>八宝粥</td>
+                    <td>492</td>
+                </tr>
+                <tr>
+                    <td>喇叭</td>
+                    <td>78</td>
+                </tr>
+                <tr>
+                    <td>西瓜</td>
+                    <td>190</td>
+                </tr>
+            </tbody>
+            <tfoot id="firstRights">
+            </tfoot>
+        </table>
+        <table class="xwtable">
+            <thead>
+                <th colspan="2">
+                    11.30第二次维权支出
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>横幅</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>矿泉水</td>
+                    <td>210</td>
+                </tr>
+                <tr>
+                    <td>八宝粥</td>
+                    <td>525</td>
+                </tr>
+                <tr>
+                    <td>面包</td>
+                    <td>170</td>
+                </tr>
+            </tbody>
+            <tfoot id="secondRights_1">
+
+            </tfoot>
+        </table>
+        <table class="xwtable">
+            <thead>
+                <th colspan="2">
+                    12.8号第二次维权支出
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>律师费（代写拒绝收楼通知书）</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>市住建局上访补贴（300/人）</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>资料打印</td>
+                    <td>80</td>
+                </tr>
+            </tbody>
+            <tfoot id="secondRights_2">
+
+            </tfoot>
+        </table>
+        <table class="xwtable">
+            <thead>
+                <th colspan="2">
+                    12.12第二次维权支出
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>谈判人员补贴（300/人）</td>
+                    <td>2400</td>
+                </tr>
+            </tbody>
+            <tfoot id="secondRights_3">
+
+            </tfoot>
+        </table>
+        <table class="xwtable">
+            <thead>
+                <th colspan="2">
+                    5.20第三次维权支出
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>横幅</td>
+                    <td>280</td>
+                </tr>
+                <tr>
+                    <td>食品</td>
+                    <td>743</td>
+                </tr>
+            </tbody>
+            <tfoot id="thirdRights">
+
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        var jsonData = GetRightsData();
+        var thead = "";
+        var tbody = "";
+        var filterColumn = ["tel"];
+        var hasPayFamily = 86;
+        var payUnit = 300;
+        for (var item in jsonData) {
+            var line = jsonData[item];
+            var trtd = "<tr>";
+            var trth = "<tr>"
+            for (var key in line) {
+                if (filterColumn.indexOf(key) < 0) {
+                    if (item === "0") {
+                        trth += "<th>" + line[key] + "</th>";
+                    }
+                    else {
+                        if (key === "pay") {
+                            var payValue = line[key];
+                            if (payValue === "0") {
+                                trtd += "<td class='red'>" + line[key] + "</td>";
+                            }
+                            else {
+                                trtd += "<td>" + line[key] + "</td>";
+                            }
+                        }
+                        else {
+                            trtd += "<td>" + line[key] + "</td>";
+                        }
+                    }
+                }
+            }
+            trtd += "</tr>";
+            trth += "</tr>";
+            if (item === "0") {
+                thead = trth;
+            }
+            else {
+                tbody += trtd;
+            }
+        }
+        var tBodyDom = document.getElementById("tbodyRights");
+        tBodyDom.innerHTML = tbody;
+        var theadDom = document.getElementById("theadRights");
+        theadDom.innerHTML = thead;
+        var tfoot = ` <tr>
+                        <td colspan="5">已交维权总户数</td>
+                        <td colspan="5">${hasPayFamily}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">已交维权总金额</td>
+                        <td colspan="5">${hasPayFamily * payUnit}</td>
+                    </tr>`;
+        var tfootDom = document.getElementById("tfootRights");
+        tfootDom.innerHTML = tfoot;
+
+        //第一次维权统计
+        var firstRightUnit = 566;
+        var firstRights = `<tr class="green">
+                    <td>二栋分担</td>
+                    <td>${firstRightUnit}</td>
+                </tr>
+                <tr class="green">
+                    <td>结余</td>
+                    <td>${hasPayFamily * payUnit - firstRightUnit}</td>
+                </tr>`;
+        var tFirstDom = document.getElementById("firstRights");
+        tFirstDom.innerHTML = firstRights;
+
+        //11.30第二次维权支出
+        var secondRightUnit_1 = 247;
+        var secondRights_1 = ` <tr class="green">
+                    <td>二栋分担</td>
+                    <td>${secondRightUnit_1}</td>
+                </tr>
+                 <tr class="green">
+                    <td>结余</td>
+                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1}</td>
+                </tr>`;
+        var tSecondDom_1 = document.getElementById("secondRights_1");
+        tSecondDom_1.innerHTML = secondRights_1;
+        // 12.8号第二次维权支出
+        var secondRightUnit_2 = 895;
+        var secondRights_2 = ` <tr class="green">
+                    <td>二栋分担</td>
+                    <td>${secondRightUnit_2}</td>
+                </tr>
+                 <tr class="green">
+                    <td>结余</td>
+                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1 - secondRightUnit_2}</td>
+                </tr>`;
+        var tSecondDom_2 = document.getElementById("secondRights_2");
+        tSecondDom_2.innerHTML = secondRights_2;
+
+        // 12.12第二次维权支出
+        var secondRightUnit_3 = 600;
+        var secondRights_3 = ` <tr class="green">
+                    <td>二栋分担</td>
+                    <td>${secondRightUnit_3}</td>
+                </tr>
+                 <tr class="green">
+                    <td>结余</td>
+                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1 - secondRightUnit_2 - secondRightUnit_3}</td>
+                </tr>`;
+        var tSecondDom_3 = document.getElementById("secondRights_3");
+        tSecondDom_3.innerHTML = secondRights_3;
+
+        // 5.20第三次维权支出
+        var thirdRightsUnit = 255.75;
+        var fiveZeroThird = 27;
+        var thirdRights = ` <tr class="green">
+                    <td>二栋分担</td>
+                    <td>${thirdRightsUnit}</td>
+                </tr>
+                 <tr class="green">
+                    <td>2-503先退273后爱家委交300</td>
+                    <td>进${fiveZeroThird}</td>
+                </tr>
+                 <tr class="green">
+                    <td>结余</td>
+                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1 - secondRightUnit_2 - secondRightUnit_3 - thirdRightsUnit + fiveZeroThird}</td>
+                </tr>`;
+        var thirdRightsDom = document.getElementById("thirdRights");
+        thirdRightsDom.innerHTML = thirdRights;
+    </script>
+</body>
+
+</html>
