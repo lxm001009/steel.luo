@@ -205,6 +205,8 @@
         var filterColumn = ["tel"];
         var hasPayFamily = 86;
         var payUnit = 300;
+        var total = hasPayFamily * payUnit + 27;
+
         for (var item in jsonData) {
             var line = jsonData[item];
             var trtd = "<tr>";
@@ -243,85 +245,94 @@
         tBodyDom.innerHTML = tbody;
         var theadDom = document.getElementById("theadRights");
         theadDom.innerHTML = thead;
-        var tfoot = ` <tr>
+        var tfoot = `<tr>
                         <td colspan="5">已交维权总户数</td>
                         <td colspan="5">${hasPayFamily}</td>
                     </tr>
                     <tr>
                         <td colspan="5">已交维权总金额</td>
-                        <td colspan="5">${hasPayFamily * payUnit}</td>
+                        <td colspan="5">${total}</td>
                     </tr>`;
         var tfootDom = document.getElementById("tfootRights");
         tfootDom.innerHTML = tfoot;
 
+
         //第一次维权统计
         var firstRightUnit = 566;
+        total = total - firstRightUnit;
         var firstRights = `<tr class="green">
                     <td>二栋分担</td>
-                    <td>${firstRightUnit}</td>
+                    <td>-${firstRightUnit}</td>
                 </tr>
                 <tr class="green">
                     <td>结余</td>
-                    <td>${hasPayFamily * payUnit - firstRightUnit}</td>
+                    <td>${total}</td>
                 </tr>`;
         var tFirstDom = document.getElementById("firstRights");
         tFirstDom.innerHTML = firstRights;
 
         //11.30第二次维权支出
         var secondRightUnit_1 = 247;
+        total = total - secondRightUnit_1;
         var secondRights_1 = ` <tr class="green">
                     <td>二栋分担</td>
-                    <td>${secondRightUnit_1}</td>
+                    <td>-${secondRightUnit_1}</td>
                 </tr>
                  <tr class="green">
                     <td>结余</td>
-                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1}</td>
+                    <td>${total}</td>
                 </tr>`;
         var tSecondDom_1 = document.getElementById("secondRights_1");
         tSecondDom_1.innerHTML = secondRights_1;
+
         // 12.8号第二次维权支出
         var secondRightUnit_2 = 895;
+        total = total - secondRightUnit_2;
         var secondRights_2 = ` <tr class="green">
                     <td>二栋分担</td>
                     <td>${secondRightUnit_2}</td>
                 </tr>
                  <tr class="green">
                     <td>结余</td>
-                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1 - secondRightUnit_2}</td>
+                    <td>${total}</td>
                 </tr>`;
         var tSecondDom_2 = document.getElementById("secondRights_2");
         tSecondDom_2.innerHTML = secondRights_2;
 
         // 12.12第二次维权支出
         var secondRightUnit_3 = 600;
+        total = total - secondRightUnit_3;
         var secondRights_3 = ` <tr class="green">
                     <td>二栋分担</td>
-                    <td>${secondRightUnit_3}</td>
+                    <td>-${secondRightUnit_3}</td>
                 </tr>
                  <tr class="green">
                     <td>结余</td>
-                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1 - secondRightUnit_2 - secondRightUnit_3}</td>
+                    <td>${total}</td>
                 </tr>`;
         var tSecondDom_3 = document.getElementById("secondRights_3");
         tSecondDom_3.innerHTML = secondRights_3;
 
+
         // 5.20第三次维权支出
         var thirdRightsUnit = 255.75;
-        var fiveZeroThird = 27;
+        //var fiveZeroThird = 27;
+        //  <tr class="green">
+        //     <td>2-503先退273后爱家委交300</td>
+        //     <td>+${fiveZeroThird}</td>
+        // </tr>
+        total = total - thirdRightsUnit;
         var thirdRights = ` <tr class="green">
                     <td>二栋分担</td>
-                    <td>${thirdRightsUnit}</td>
-                </tr>
-                 <tr class="green">
-                    <td>2-503先退273后爱家委交300</td>
-                    <td>+${fiveZeroThird}</td>
+                    <td>-${thirdRightsUnit}</td>
                 </tr>
                  <tr class="green">
                     <td>结余</td>
-                    <td>${hasPayFamily * payUnit - firstRightUnit - secondRightUnit_1 - secondRightUnit_2 - secondRightUnit_3 - thirdRightsUnit + fiveZeroThird}</td>
+                    <td>${total}</td>
                 </tr>`;
         var thirdRightsDom = document.getElementById("thirdRights");
         thirdRightsDom.innerHTML = thirdRights;
+
     </script>
 </body>
 
