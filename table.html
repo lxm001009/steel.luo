@@ -197,6 +197,30 @@
 
             </tfoot>
         </table>
+        <table class="xwtable">
+            <thead>
+                <th colspan="2">
+                    9.26事件后第四次维权支出
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9.27日主动参与维权谈判代表感谢费（每人一百）</td>
+                    <td>700</td>
+                </tr>
+                <tr>
+                    <td>9.28日阻止家属闹事食品费</td>
+                    <td>213</td>
+                </tr>
+                <tr>
+                    <td>10.4日驱逐物业食品费</td>
+                    <td>980</td>
+                </tr>
+            </tbody>
+            <tfoot id="fourRights">
+
+            </tfoot>
+        </table>
     </div>
     <script>
         var jsonData = GetRightsData();
@@ -206,6 +230,17 @@
         var hasPayFamily = 86;
         var payUnit = 300;
         var total = hasPayFamily * payUnit + 27;
+
+        function TotalPay(rightsPay, total) {
+            return ` <tr class="green">
+                    <td>二栋分担</td>
+                    <td>-${rightsPay}</td>
+                </tr>
+                 <tr class="green">
+                    <td>结余</td>
+                    <td>${total}</td>
+                </tr>`;
+        }
 
         for (var item in jsonData) {
             var line = jsonData[item];
@@ -260,56 +295,28 @@
         //第一次维权统计
         var firstRightUnit = 566;
         total = total - firstRightUnit;
-        var firstRights = `<tr class="green">
-                    <td>二栋分担</td>
-                    <td>-${firstRightUnit}</td>
-                </tr>
-                <tr class="green">
-                    <td>结余</td>
-                    <td>${total}</td>
-                </tr>`;
+        var firstRights = TotalPay(firstRightUnit, total);
         var tFirstDom = document.getElementById("firstRights");
         tFirstDom.innerHTML = firstRights;
 
         //11.30第二次维权支出
         var secondRightUnit_1 = 247;
         total = total - secondRightUnit_1;
-        var secondRights_1 = ` <tr class="green">
-                    <td>二栋分担</td>
-                    <td>-${secondRightUnit_1}</td>
-                </tr>
-                 <tr class="green">
-                    <td>结余</td>
-                    <td>${total}</td>
-                </tr>`;
+        var secondRights_1 = TotalPay(secondRightUnit_1, total);
         var tSecondDom_1 = document.getElementById("secondRights_1");
         tSecondDom_1.innerHTML = secondRights_1;
 
         // 12.8号第二次维权支出
         var secondRightUnit_2 = 895;
         total = total - secondRightUnit_2;
-        var secondRights_2 = ` <tr class="green">
-                    <td>二栋分担</td>
-                    <td>${secondRightUnit_2}</td>
-                </tr>
-                 <tr class="green">
-                    <td>结余</td>
-                    <td>${total}</td>
-                </tr>`;
+        var secondRights_2 = TotalPay(secondRightUnit_2, total);
         var tSecondDom_2 = document.getElementById("secondRights_2");
         tSecondDom_2.innerHTML = secondRights_2;
 
         // 12.12第二次维权支出
         var secondRightUnit_3 = 600;
         total = total - secondRightUnit_3;
-        var secondRights_3 = ` <tr class="green">
-                    <td>二栋分担</td>
-                    <td>-${secondRightUnit_3}</td>
-                </tr>
-                 <tr class="green">
-                    <td>结余</td>
-                    <td>${total}</td>
-                </tr>`;
+        var secondRights_3 = TotalPay(secondRightUnit_3, total);
         var tSecondDom_3 = document.getElementById("secondRights_3");
         tSecondDom_3.innerHTML = secondRights_3;
 
@@ -322,16 +329,17 @@
         //     <td>+${fiveZeroThird}</td>
         // </tr>
         total = total - thirdRightsUnit;
-        var thirdRights = ` <tr class="green">
-                    <td>二栋分担</td>
-                    <td>-${thirdRightsUnit}</td>
-                </tr>
-                 <tr class="green">
-                    <td>结余</td>
-                    <td>${total}</td>
-                </tr>`;
+        var thirdRights = TotalPay(thirdRightsUnit, total);
         var thirdRightsDom = document.getElementById("thirdRights");
         thirdRightsDom.innerHTML = thirdRights;
+
+
+        //9.26事件后第四次维权支出
+        var fourRightsUnit = 473.25;
+        total = total - fourRightsUnit;
+        var fourRights = TotalPay(fourRightsUnit, total);
+        var fourRightsDom = document.getElementById("fourRights");
+        fourRightsDom.innerHTML = fourRights;
 
     </script>
 </body>
