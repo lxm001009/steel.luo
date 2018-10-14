@@ -8,6 +8,10 @@
     <title>Document</title>
     <script src="js/rightsRecord.js"></script>
     <style>
+        body {
+            margin: 0px
+        }
+
         #app {
             text-align: center;
         }
@@ -16,6 +20,7 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #ccc;
+            margin: 10px;
         }
 
         .xwtable thead th,
@@ -42,6 +47,7 @@
             padding: 4px 10px 3px 10px;
             height: 18px;
             border: 1px solid #ccc;
+            width: 20%
         }
 
         .xwtable td.red {
@@ -281,12 +287,12 @@
         var theadDom = document.getElementById("theadRights");
         theadDom.innerHTML = thead;
         var tfoot = `<tr>
-                        <td colspan="5">已交维权总户数</td>
-                        <td colspan="5">${hasPayFamily}</td>
+                        <td colspan="4">已交维权总户数</td>
+                        <td colspan="4">${hasPayFamily}</td>
                     </tr>
                     <tr>
-                        <td colspan="5">已交维权总金额</td>
-                        <td colspan="5">${total}</td>
+                        <td colspan="4">已交维权总金额</td>
+                        <td colspan="4">${total}</td>
                     </tr>`;
         var tfootDom = document.getElementById("tfootRights");
         tfootDom.innerHTML = tfoot;
