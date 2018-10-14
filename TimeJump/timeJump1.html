@@ -2,9 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        #box {
+            width: 360px;
+            margin: 50px auto;
+        }
+
+        #box ul li {
+            float: left;
+            list-style-type: none;
+            margin: 0 5px;
+        }
+
+        #box ul li.num {
+            width: 40px;
+            height: 60px;
+        }
+
+        #box ul li.dot {
+            width: 17px;
+            height: 60px;
+            background-image: url("img/d.png")
+        }
+
+        #box ul li.l0 {
+            background-image: url("img/0.png")
+        }
+
+        #box ul li.l1 {
+            background-image: url("img/1.png")
+        }
+
+        #box ul li.l2 {
+            background-image: url("img/2.png")
+        }
+
+        #box ul li.l3 {
+            background-image: url("img/3.png")
+        }
+
+        #box ul li.l4 {
+            background-image: url("img/4.png")
+        }
+
+        #box ul li.l5 {
+            background-image: url("img/5.png")
+        }
+
+        #box ul li.l6 {
+            background-image: url("img/6.png")
+        }
+
+        #box ul li.l7 {
+            background-image: url("img/7.png")
+        }
+
+        #box ul li.l8 {
+            background-image: url("img/8.png")
+        }
+
+        #box ul li.l9 {
+            background-image: url("img/9.png")
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            setInterval(fn, 1000);
+        }
+        var liNum = document.getElementsByClassName("num");
+        function fn() {
+            var nowDate = new Date();
+            var hh = nowDate.getHours();
+            var mm = nowDate.getMinutes();
+            var ss = nowDate.getSeconds();
+            var strTime = "" + toTwo(hh) + toTwo(mm) + toTwo(ss);
+            var length = strTime.length;
+            for (var i = 0; i < length; i++) {
+                var num = strTime.charAt(i);
+                liNum[i].className = "num l" + num;
+            }
+        }
+        function toTwo(num) {
+            return num < 10 ? "0" + num : num;
+        }
+    </script>
 </head>
 <body>
-$END$
+<div id="box">
+    <ul>
+        <li class="num l0"></li>
+        <li class="num l0"></li>
+        <li class="dot"></li>
+        <li class="num l0"></li>
+        <li class="num l0"></li>
+        <li class="dot"></li>
+        <li class="num l0"></li>
+        <li class="num l0"></li>
+    </ul>
+ </div>
 </body>
 </html>
