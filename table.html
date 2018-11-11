@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="js/jquery-2.2.0.min.js"></script>
     <script src="js/rightsRecord.js"></script>
     <style>
         body {
@@ -20,11 +21,12 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #ccc;
+            margin-bottom: 12px;
         }
 
         .xwtable thead th,
         .xwtable thead td {
-            font-size: 12px;
+            font-size: 14px;
             color: #333333;
             text-align: center;
             border: 1px solid #ccc;
@@ -208,7 +210,7 @@
                     9.26事件后第四次维权支出
                 </th>
             </thead>
-            <tbody>
+            <tbody id='fourRightsBody'>
                 <tr>
                     <td>9.27日主动参与维权谈判代表感谢费（每人一百）</td>
                     <td>700</td>
@@ -222,8 +224,20 @@
                     <td>980</td>
                 </tr>
                 <tr>
-                    <td>10.11日购买录音笔一支</td>
+                    <td>10.16日购买录音笔一支</td>
                     <td>268</td>
+                </tr>
+                <tr>
+                    <td>10.28日4-1401打印成立业委会资料80，4-2301买成立业委会指导书一本100</td>
+                    <td>180</td>
+                </tr>
+                <tr>
+                    <td>10.29日4-2301，3-2102，2-1202到社会事务局递交业委会申请资料（每人补贴80），复印，打印资料26.5</td>
+                    <td>266.5</td>
+                </tr>
+                <tr>
+                    <td>10.30日上午4-2301到房管局递交业委会申请补贴100，下午4-2301，4-1401走访小区周边工厂，收藏污染证据各补贴80</td>
+                    <td>260</td>
                 </tr>
             </tbody>
             <tfoot id="fourRights">
@@ -232,66 +246,75 @@
         </table>
     </div>
     <script>
-        var jsonData = GetRightsData();
-        var thead = "";
-        var tbody = "";
-        var filterColumn = ["tel", "unit"];
-        var hasPayFamily = 0;
-        var payUnit = 300;
+        var total = 0;
 
-
-        function TotalPay(rightsPay, total) {
-            return ` <tr class="green">
+        function TotalPay(rightsPay, id) {
+            var myRightsPay = rightsPay / 4;
+            total = total - myRightsPay;
+            var totalPayHtml = `<tr class="green">
+                    <td>总计</td>
+                    <td>${rightsPay}</td>
+                </tr>
+            <tr class="green">
                     <td>二栋分担</td>
-                    <td>-${rightsPay}</td>
+                    <td>-${myRightsPay}</td>
                 </tr>
                  <tr class="green">
                     <td>结余</td>
                     <td>${total}</td>
                 </tr>`;
+            var tFirstDom = document.getElementById(id);
+            tFirstDom.innerHTML = totalPayHtml;
         }
 
-        for (var item in jsonData) {
-            var line = jsonData[item];
-            var trtd = "<tr>";
-            var trth = "<tr>"
-            for (var key in line) {
-                if (filterColumn.indexOf(key) < 0) {
-                    if (item === "0") {
-                        trth += "<th>" + line[key] + "</th>";
-                    }
-                    else {
-                        if (key === "pay") {
-                            var payValue = line[key];
-                            if (payValue === "0") {
-                                trtd += "<td class='red'>" + line[key] + "</td>";
+        function GenerateTableInfo() {
+            var payUnit = 300;
+            var jsonData = GetRightsData();
+            var thead = "";
+            var tbody = "";
+            var filterColumn = ["tel", "unit"];
+            var hasPayFamily = 0;
+            for (var item in jsonData) {
+                var line = jsonData[item];
+                var trtd = "<tr>";
+                var trth = "<tr>"
+                for (var key in line) {
+                    if (filterColumn.indexOf(key) < 0) {
+                        if (item === "0") {
+                            trth += "<th>" + line[key] + "</th>";
+                        }
+                        else {
+                            if (key === "pay") {
+                                var payValue = line[key];
+                                if (payValue === "0") {
+                                    trtd += "<td class='red'>" + line[key] + "</td>";
+                                }
+                                else {
+                                    hasPayFamily++;
+                                    trtd += "<td>" + line[key] + "</td>";
+                                }
                             }
                             else {
-                                hasPayFamily++;
                                 trtd += "<td>" + line[key] + "</td>";
                             }
                         }
-                        else {
-                            trtd += "<td>" + line[key] + "</td>";
-                        }
                     }
                 }
+                trtd += "</tr>";
+                trth += "</tr>";
+                if (item === "0") {
+                    thead = trth;
+                }
+                else {
+                    tbody += trtd;
+                }
             }
-            trtd += "</tr>";
-            trth += "</tr>";
-            if (item === "0") {
-                thead = trth;
-            }
-            else {
-                tbody += trtd;
-            }
-        }
-        var total = hasPayFamily * payUnit + 27;
-        var tBodyDom = document.getElementById("tbodyRights");
-        tBodyDom.innerHTML = tbody;
-        var theadDom = document.getElementById("theadRights");
-        theadDom.innerHTML = thead;
-        var tfoot = `<tr>
+            total = hasPayFamily * payUnit + 27;
+            var tBodyDom = document.getElementById("tbodyRights");
+            tBodyDom.innerHTML = tbody;
+            var theadDom = document.getElementById("theadRights");
+            theadDom.innerHTML = thead;
+            var tfoot = `<tr>
                         <td colspan="4">已交维权总户数</td>
                         <td colspan="4">${hasPayFamily}</td>
                     </tr>
@@ -299,59 +322,44 @@
                         <td colspan="4">已交维权总金额</td>
                         <td colspan="4">${total}</td>
                     </tr>`;
-        var tfootDom = document.getElementById("tfootRights");
-        tfootDom.innerHTML = tfoot;
+            var tfootDom = document.getElementById("tfootRights");
+            tfootDom.innerHTML = tfoot;
+        }
 
+        function TableTotalPay(id) {
+            var fourRightsUnit = 0;
+            var tdDom = $(`#${id}>tr>td:odd`);
+            for (var i = 0; i < tdDom.length; i++) {
+                fourRightsUnit += parseFloat($(tdDom[i]).text());
+            }
+            return fourRightsUnit;
+        }
+
+        GenerateTableInfo();
 
         //第一次维权统计
-        var firstRightUnit = 566;
-        total = total - firstRightUnit;
-        var firstRights = TotalPay(firstRightUnit, total);
-        var tFirstDom = document.getElementById("firstRights");
-        tFirstDom.innerHTML = firstRights;
+        var firstRightUnit = 566 * 4;
+        var firstRights = TotalPay(firstRightUnit, 'firstRights');
 
         //11.30第二次维权支出
-        var secondRightUnit_1 = 247;
-        total = total - secondRightUnit_1;
-        var secondRights_1 = TotalPay(secondRightUnit_1, total);
-        var tSecondDom_1 = document.getElementById("secondRights_1");
-        tSecondDom_1.innerHTML = secondRights_1;
+        var secondRightUnit_1 = 247 * 4;
+        var secondRights_1 = TotalPay(secondRightUnit_1, 'secondRights_1');
 
         // 12.8号第二次维权支出
-        var secondRightUnit_2 = 895;
-        total = total - secondRightUnit_2;
-        var secondRights_2 = TotalPay(secondRightUnit_2, total);
-        var tSecondDom_2 = document.getElementById("secondRights_2");
-        tSecondDom_2.innerHTML = secondRights_2;
+        var secondRightUnit_2 = 895 * 4;
+        var secondRights_2 = TotalPay(secondRightUnit_2, 'secondRights_2');
 
         // 12.12第二次维权支出
-        var secondRightUnit_3 = 600;
-        total = total - secondRightUnit_3;
-        var secondRights_3 = TotalPay(secondRightUnit_3, total);
-        var tSecondDom_3 = document.getElementById("secondRights_3");
-        tSecondDom_3.innerHTML = secondRights_3;
+        var secondRightUnit_3 = 600 * 4;
+        var secondRights_3 = TotalPay(secondRightUnit_3, 'secondRights_3');
 
-
-        // 5.20第三次维权支出
-        var thirdRightsUnit = 255.75;
-        //var fiveZeroThird = 27;
-        //  <tr class="green">
-        //     <td>2-503先退273后爱家委交300</td>
-        //     <td>+${fiveZeroThird}</td>
-        // </tr>
-        total = total - thirdRightsUnit;
-        var thirdRights = TotalPay(thirdRightsUnit, total);
-        var thirdRightsDom = document.getElementById("thirdRights");
-        thirdRightsDom.innerHTML = thirdRights;
-
+        // 5.20第三次维权支出,2-503先退273后爱家委交300
+        var thirdRightsUnit = 255.75 * 4;
+        var thirdRights = TotalPay(thirdRightsUnit, 'thirdRights');
 
         //9.26事件后第四次维权支出
-        var fourRightsUnit = 473.25 + 67;
-        total = total - fourRightsUnit;
-        var fourRights = TotalPay(fourRightsUnit, total);
-        var fourRightsDom = document.getElementById("fourRights");
-        fourRightsDom.innerHTML = fourRights;
-
+        var fourRightsUnit = TableTotalPay('fourRightsBody');
+        var fourRights = TotalPay(fourRightsUnit, 'fourRights');
     </script>
 </body>
 
