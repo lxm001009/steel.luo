@@ -247,119 +247,30 @@
     </div>
     <script>
         var total = 0;
-
-        function TotalPay(rightsPay, id) {
-            var myRightsPay = rightsPay / 4;
-            total = total - myRightsPay;
-            var totalPayHtml = `<tr class="green">
-                    <td>总计</td>
-                    <td>${rightsPay}</td>
-                </tr>
-            <tr class="green">
-                    <td>二栋分担</td>
-                    <td>-${myRightsPay}</td>
-                </tr>
-                 <tr class="green">
-                    <td>结余</td>
-                    <td>${total}</td>
-                </tr>`;
-            var tFirstDom = document.getElementById(id);
-            tFirstDom.innerHTML = totalPayHtml;
-        }
-
-        function GenerateTableInfo() {
-            var payUnit = 300;
-            var jsonData = GetRightsData();
-            var thead = "";
-            var tbody = "";
-            var filterColumn = ["tel", "unit"];
-            var hasPayFamily = 0;
-            for (var item in jsonData) {
-                var line = jsonData[item];
-                var trtd = "<tr>";
-                var trth = "<tr>"
-                for (var key in line) {
-                    if (filterColumn.indexOf(key) < 0) {
-                        if (item === "0") {
-                            trth += "<th>" + line[key] + "</th>";
-                        }
-                        else {
-                            if (key === "pay") {
-                                var payValue = line[key];
-                                if (payValue === "0") {
-                                    trtd += "<td class='red'>" + line[key] + "</td>";
-                                }
-                                else {
-                                    hasPayFamily++;
-                                    trtd += "<td>" + line[key] + "</td>";
-                                }
-                            }
-                            else {
-                                trtd += "<td>" + line[key] + "</td>";
-                            }
-                        }
-                    }
-                }
-                trtd += "</tr>";
-                trth += "</tr>";
-                if (item === "0") {
-                    thead = trth;
-                }
-                else {
-                    tbody += trtd;
-                }
-            }
-            total = hasPayFamily * payUnit + 27;
-            var tBodyDom = document.getElementById("tbodyRights");
-            tBodyDom.innerHTML = tbody;
-            var theadDom = document.getElementById("theadRights");
-            theadDom.innerHTML = thead;
-            var tfoot = `<tr>
-                        <td colspan="4">已交维权总户数</td>
-                        <td colspan="4">${hasPayFamily}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">已交维权总金额</td>
-                        <td colspan="4">${total}</td>
-                    </tr>`;
-            var tfootDom = document.getElementById("tfootRights");
-            tfootDom.innerHTML = tfoot;
-        }
-
-        function TableTotalPay(id) {
-            var fourRightsUnit = 0;
-            var tdDom = $(`#${id}>tr>td:odd`);
-            for (var i = 0; i < tdDom.length; i++) {
-                fourRightsUnit += parseFloat($(tdDom[i]).text());
-            }
-            return fourRightsUnit;
-        }
-
         GenerateTableInfo();
-
         //第一次维权统计
         var firstRightUnit = 566 * 4;
-        var firstRights = TotalPay(firstRightUnit, 'firstRights');
+        TotalPay(firstRightUnit, 'firstRights');
 
         //11.30第二次维权支出
         var secondRightUnit_1 = 247 * 4;
-        var secondRights_1 = TotalPay(secondRightUnit_1, 'secondRights_1');
+        TotalPay(secondRightUnit_1, 'secondRights_1');
 
         // 12.8号第二次维权支出
         var secondRightUnit_2 = 895 * 4;
-        var secondRights_2 = TotalPay(secondRightUnit_2, 'secondRights_2');
+        TotalPay(secondRightUnit_2, 'secondRights_2');
 
         // 12.12第二次维权支出
         var secondRightUnit_3 = 600 * 4;
-        var secondRights_3 = TotalPay(secondRightUnit_3, 'secondRights_3');
+        TotalPay(secondRightUnit_3, 'secondRights_3');
 
         // 5.20第三次维权支出,2-503先退273后爱家委交300
         var thirdRightsUnit = 255.75 * 4;
-        var thirdRights = TotalPay(thirdRightsUnit, 'thirdRights');
+        TotalPay(thirdRightsUnit, 'thirdRights');
 
         //9.26事件后第四次维权支出
         var fourRightsUnit = TableTotalPay('fourRightsBody');
-        var fourRights = TotalPay(fourRightsUnit, 'fourRights');
+        TotalPay(fourRightsUnit, 'fourRights');
     </script>
 </body>
 

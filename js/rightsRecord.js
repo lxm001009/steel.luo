@@ -101,3 +101,90 @@
 	{ 'seq': '199', 'name': '吴桃妹/吴声桃', 'unit': '2栋', 'floor': '2栋26层', 'room': '2-2603', 'tel': '13549459423/15015443979', 'pay': '300' },
 	{ 'seq': '200', 'name': '杨真杰', 'unit': '2栋', 'floor': '2栋26层', 'room': '2-2604', 'tel': '13650062576', 'pay': '300' }]
 }
+
+function TotalPay(rightsPay, id) {
+	var myRightsPay = rightsPay / 4;
+	total = total - myRightsPay;
+	var totalPayHtml = `<tr class="green">
+                    <td>总计</td>
+                    <td>${rightsPay}</td>
+                </tr>
+            <tr class="green">
+                    <td>二栋分担</td>
+                    <td>-${myRightsPay}</td>
+                </tr>
+                 <tr class="green">
+                    <td>结余</td>
+                    <td>${total}</td>
+                </tr>`;
+	var tFirstDom = document.getElementById(id);
+	tFirstDom.innerHTML = totalPayHtml;
+}
+
+function GenerateTableInfo() {
+	var payUnit = 300;
+	var jsonData = GetRightsData();
+	var thead = "";
+	var tbody = "";
+	var filterColumn = ["tel", "unit"];
+	var hasPayFamily = 0;
+	for (var item in jsonData) {
+		var line = jsonData[item];
+		var trtd = "<tr>";
+		var trth = "<tr>"
+		for (var key in line) {
+			if (filterColumn.indexOf(key) < 0) {
+				if (item === "0") {
+					trth += "<th>" + line[key] + "</th>";
+				}
+				else {
+					if (key === "pay") {
+						var payValue = line[key];
+						if (payValue === "0") {
+							trtd += "<td class='red'>" + line[key] + "</td>";
+						}
+						else {
+							hasPayFamily++;
+							trtd += "<td>" + line[key] + "</td>";
+						}
+					}
+					else {
+						trtd += "<td>" + line[key] + "</td>";
+					}
+				}
+			}
+		}
+		trtd += "</tr>";
+		trth += "</tr>";
+		if (item === "0") {
+			thead = trth;
+		}
+		else {
+			tbody += trtd;
+		}
+	}
+	total = hasPayFamily * payUnit + 27;
+	var tBodyDom = document.getElementById("tbodyRights");
+	tBodyDom.innerHTML = tbody;
+	var theadDom = document.getElementById("theadRights");
+	theadDom.innerHTML = thead;
+	var tfoot = `<tr>
+                        <td colspan="4">已交维权总户数</td>
+                        <td colspan="4">${hasPayFamily}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">已交维权总金额</td>
+                        <td colspan="4">${total}</td>
+                    </tr>`;
+	var tfootDom = document.getElementById("tfootRights");
+	tfootDom.innerHTML = tfoot;
+}
+
+function TableTotalPay(id) {
+	var fourRightsUnit = 0;
+	var tdDom = $(`#${id}>tr>td:odd`);
+	for (var i = 0; i < tdDom.length; i++) {
+		fourRightsUnit += parseFloat($(tdDom[i]).text());
+	}
+	return fourRightsUnit;
+}
