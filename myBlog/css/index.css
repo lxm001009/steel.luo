@@ -1,0 +1,492 @@
+@charset "gbk";
+/* blog */
+.blog {
+	margin: 30px 20px;
+	overflow: hidden
+}
+.blog figure {
+	background: #ececec;
+	border: #FFF 10px solid;
+	width: 270px;
+	height: 430px;
+	float: left;
+	margin: 0 25px 0;
+	overflow: hidden
+}
+.blog figure img {
+	display: block;
+	margin: auto;
+	height: 256px;
+	overflow: hidden;
+}
+.blog figure p {
+	font-size: 14px;
+	text-shadow: #fff 1px 1px 0px;
+	line-height: 26px;
+	text-align: center;
+	font-weight: bold
+}
+.blog figure p a {
+	color: #226039;
+}
+.blog figure figcaption {
+	padding: 10px;
+	line-height: 22px;
+	color: #666;
+}
+.blog figure ul {
+	background: url(../images/yu.png) no-repeat center;
+	overflow: hidden;
+	height: 256px;
+	margin-bottom: 20px
+}
+.blog figure ul span {
+	opacity: 0
+}
+.blog figure ul:hover span {
+	opacity: 1
+}
+.blog figure ul a {
+	position: relative;
+	display: block
+}
+.blog figure ul span {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background: rgba(0, 0, 0, 0.5) url(../images/yu.png) no-repeat center 10px;
+	color: #FFF;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 256px;
+	text-align: center;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	text-decoration: underline
+}
+/* cbp_tmtimeline */
+.cbp_tmtimeline {
+	margin: 30px 0 0 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+}
+.cbp_tmtimeline:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	background: #afdcf8;
+	left: 158px;
+	margin-left: -10px;
+}
+.cbp_tmtimeline > li {
+	position: relative;
+}
+.cbp_tmtimeline > li .cbp_tmtime {
+	display: block;
+	width: 100px;
+	padding-right: 30px;
+	position: absolute;
+	margin-left: 20px
+}
+.cbp_tmtimeline > li .cbp_tmtime span {
+	display: block;
+	text-align: right;
+}
+.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+	font-size: 14px;
+	color: #bdd0db;
+}
+.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+	font-size: 22px;
+	color: #3594cb;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+color: #6cbfee;
+}
+.cbp_tmtimeline > li .cbp_tmlabel {
+	margin: 0 30px 15px 180px;
+	background: #666;
+	color: #fff;
+	padding: 2px;
+	position: relative;
+	border-radius: 5px;
+	height: 150px;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+background: #666;
+}
+.cbp_tmtimeline > li .cbp_tmlabel h2 {
+	margin-top: 0px;
+	padding: 0 0 10px 0;
+	font-size: 16px;
+	text-shadow: rgba(7, 84, 152, 0.71) 1px 1px 1px;
+}
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position:
+absolute;
+	pointer-events: none;
+	border-right-color: #666;
+	border-width: 10px;
+	top: 10px;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+border-right-color: #666;
+}
+.cbp_tmtimeline > li .cbp_tmicon {
+	width: 10px;
+	height: 10px;
+	font-family: 'ecoico';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-size: 1.4em;
+	line-height: 40px;
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	color: #fff;
+	background: #46a4da;
+	border-radius: 50%;
+	box-shadow: 0 0 0 3px #afdcf8;
+	text-align: center;
+	left: 170px;
+	top: 15px;
+	margin: 0 0 0 -25px;
+}
+.blogpic {
+	width: 200px;
+	height: 120px;
+	overflow: hidden;
+	display: block;
+	float: left;
+	margin-right: 20px;
+}
+.blogpic img {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+a.readmore {
+	background: #CCC;
+	color: #fff;
+	padding: 5px 10px;
+	float: right;
+	margin: 20px 0 0 0;
+	border-radius: 5px;
+}
+.cbp_tmtimeline li .cbp_tmtime {
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+}
+.cbp_tmtimeline li:hover .cbp_tmicon {
+	box-shadow: 0 0 0 3px #ececec;
+}
+.cbp_tmtimeline li:hover .cbp_tmtime {
+	background: #afdcf8;
+	border-radius: 20px 0 0 20px;
+}
+.cbp_tmtimeline li:hover .cbp_tmtime span {
+	color: #fff;
+}
+/* ---------------------info------------------------- */
+.info {
+	width: 1000px;
+	margin: 40px auto;
+	overflow: hidden;
+	clear: both
+}
+/* 图片向上翻转的动画效果 */
+.info figure {
+	display: inline-block;
+	width: 630px;
+	height: 250px;
+	position: relative;
+	-webkit-animation: pageTop 6s ease 0.5s backwards;
+	-moz-animation: pageTop 6s ease 0.5s backwards;
+	-ms-animation: pageTop 6s ease 0.5s backwards;
+	-o-animation: pageTop 6s ease 0.5s backwards;
+	animation: pageTop 6s ease 0.5s backwards;
+	float: left;
+}
+.info figcaption {
+	padding: 20px;
+	position: absolute;
+	top: 20%;
+	left: 0;
+	background: rgba(153, 153, 153, .8);
+	color: white;
+	opacity: 0;
+-webkit-transition: opacity .75s ease-out;
+-moz-transition: opacity .75s ease-out;
+-o-transition: opacity .75s ease-out;
+transition: opacity .75s ease-out;
+}
+.info figure:hover figcaption {
+	opacity: 1;
+}
+/* 用opacity 设置鼠标放上去显示文字的效果 */
+.info figcaption strong {
+	display: block;
+	line-height: 40px
+}
+/* card */
+.card {
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, .1), inset 0px 1px 1px rgba(0, 0, 0, .7);
+	border-radius: 6px;
+	width: 350px;
+	float: right;
+	height: 250px;
+	overflow: hidden
+}
+.card h1 {
+	padding: 10px
+}
+.card p:first-child {
+	padding: 40px 0 0 40px
+}
+/* 结构性伪类选择符 选择第一个p标签，并且设置上、左距离是40px*/
+.card p {
+	padding: 0 0 0 40px;
+	line-height: 28px;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+	color:black;
+	-webkit-animation: animations2 5s ease-in-out 5s;
+	-moz-animation: animations2 5s ease-in-out 5s;
+	-o-animation: animations2 5s ease-in-out 5s;
+	-ms-animation: animations2 5s ease-in-out 5s;
+	animation: animations2 5s ease-in-out 5s;
+}
+.linkmore {
+	margin: 15px 0 0 15px
+}
+.linkmore li a {
+	height: 50px;
+	width: 50px;
+	display: block;
+	overflow: hidden;
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, .1), inset 0px 1px 1px rgba(0, 0, 0, .7);
+	border-radius: 50%;
+	float: left;
+	margin: 0 6px;
+}
+.linkmore li a:hover {
+	opacity: 0.5;
+	-webkit-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+.talk, .address, .email, .photos, .heart {
+	background: url(../images/icons.png) no-repeat;
+}
+.talk {
+	background-position: 13px 18px
+}
+.address {
+	background-position: 12px -22px
+}
+.email {
+	background-position: 12px -60px
+}
+.photos {
+	background-position: 12px -137px
+}
+.heart {
+	background-position: 13px -99px
+}
+#musicframe {
+	width:1000px;
+	height:600px;
+}
+ @-webkit-keyframes pageTop {
+0% {
+opacity: 0;
+-webkit-transform: perspective(400px) rotateX(90deg);
+}
+ 100% {
+opacity: 1;
+-webkit-transform: perspective(400px) rotateX(0deg);
+}
+}
+ @-moz-keyframes pageTop {
+0% {
+opacity: 0;
+-moz-transform: perspective(400px) rotateX(90deg);
+}
+ 100% {
+opacity: 1;
+-moz-transform: perspective(400px) rotateX(0deg);
+}
+}
+ @-o-keyframes pageTop {
+0% {
+opacity: 0;
+-o-transform: perspective(400px) rotateX(90deg);
+}
+ 100% {
+opacity: 1;
+-o-transform: perspective(400px) rotateX(0deg);
+}
+}
+ @keyframes pageTop {
+0% {
+opacity: 0;
+transform: perspective(400px) rotateX(90deg);
+}
+ 100% {
+opacity: 1;
+transform: perspective(400px) rotateX(0deg);
+}
+}
+@keyframes starwars {
+0% {
+opacity: 0;
+transform: perspective(200px) scale(3) translateY(180px) rotateX(80deg);
+}
+ 80% {
+opacity: 1;
+transform: perspective(200px) scale(1) rotateX(60deg)
+}
+ 100% {
+opacity: 1;
+transform: perspective(200px) scale(1) rotateX(0deg)
+}
+}
+ @-webkit-keyframes animations2 {
+0% {
+opacity:0;
+}
+ 40% {
+opacity:.8;
+}
+ 45% {
+opacity:.3;
+}
+ 50% {
+opacity:.8;
+}
+ 55% {
+opacity:.3;
+}
+ 60% {
+opacity:.8;
+}
+ 100% {
+opacity:0;
+}
+}
+@-moz-keyframes animations2 {
+0% {
+opacity:0;
+}
+ 40% {
+opacity:.8;
+}
+ 45% {
+opacity:.3;
+}
+ 50% {
+opacity:.8;
+}
+ 55% {
+opacity:.3;
+}
+ 60% {
+opacity:.8;
+}
+ 100% {
+opacity:0;
+}
+}
+@-o-keyframes animations2 {
+0% {
+opacity:0;
+}
+ 40% {
+opacity:.8;
+}
+ 45% {
+opacity:.3;
+}
+ 50% {
+opacity:.8;
+}
+ 55% {
+opacity:.3;
+}
+ 60% {
+opacity:.8;
+}
+ 100% {
+opacity:0;
+}
+}
+@-ms-keyframes animations2 {
+0% {
+opacity:0;
+}
+ 40% {
+opacity:.8;
+}
+ 45% {
+opacity:.3;
+}
+ 50% {
+opacity:.8;
+}
+ 55% {
+opacity:.3;
+}
+ 60% {
+opacity:.8;
+}
+ 100% {
+opacity:0;
+}
+}
+@keyframes animations2 {
+0% {
+opacity:0;
+}
+ 40% {
+opacity:.8;
+}
+ 45% {
+opacity:.3;
+}
+ 50% {
+opacity:.8;
+}
+ 55% {
+opacity:.3;
+}
+ 60% {
+opacity:.8;
+}
+ 100% {
+opacity:0;
+}
+}
+.snow-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 100001;
+}

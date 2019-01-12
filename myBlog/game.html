@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <meta charset="gbk">
+  <title>个人博客</title>
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/game.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="logo" data-scroll-reveal="enter right over 1s"><img src="images/logo.png"></div>
+    <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s"><a href="index.html"><span>首页</span><span
+          class="en">Home</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a><a href="concern.html"><span>我的关注</span><span
+          class="en">Interest</span></a><a href="log.html"><span>个人日志</span><span class="en">Log</span></a><a href="xczs.html"><span>相册展示</span><span
+          class="en">Show</span></a><a href="contact.html"><span>联系我</span><span class="en">Contact</span></a><a href="gbook.html"><span>留言</span><span
+          class="en">Saying</span></a><a href="game.html"><span>游戏</span><span class="en">Game</span></a></nav>
+  </header>
+  <article>
+    <div class="container">
+      <div class="blog" data-scroll-reveal="enter top">
+        <div class="scores">
+          <div class="score-container best-score"> 最佳:
+            <div class="score">
+              <div id="bestScore">0</div>
+            </div>
+          </div>
+          <div class="score-container"> 分数:
+            <div class="score">
+              <div id="score">0</div>
+              <div class="add" id="add"></div>
+            </div>
+          </div>
+        </div>
+        <div class="game">
+          <div id="tile-container" class="tile-container"></div>
+          <div class="end" id="end">游戏结束
+            <button class="btn not-recommended__item js-restart-btn" id="try-again">再试一次</button>
+          </div>
+        </div>
+        <div class="not-recommended">
+          <button class="btn not-recommended__item js-restart-btn" id="restart">重新启动游戏</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

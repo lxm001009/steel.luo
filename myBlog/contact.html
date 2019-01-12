@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <meta charset="gbk">
+  <title>个人博客</title>
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/contact.css" rel="stylesheet">
+  <script src="js/tool/scrollReveal.js"></script>
+  <script src='js/zzsc.js' type="text/javascript"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo" data-scroll-reveal="enter right over 1s"><img src="images/logo.png"></div>
+    <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s"><a href="index.html"><span>首页</span><span
+          class="en">Home</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a><a href="concern.html"><span>我的关注</span><span
+          class="en">Interest</span></a><a href="log.html"><span>个人日志</span><span class="en">Log</span></a><a href="xczs.html"><span>相册展示</span><span
+          class="en">Show</span></a><a href="contact.html"><span>联系我</span><span class="en">Contact</span></a><a href="gbook.html"><span>留言</span><span
+          class="en">Saying</span></a><a href="game.html"><span>游戏</span><span class="en">Game</span></a></nav>
+  </header>
+  <article>
+    <div class="container">
+      <h2 class="ctitle"><b>联系我</b> <span>多一点朋友，多一点友谊。</span></h2>
+      <div class="blog" data-scroll-reveal="enter top">
+        <div id="tagscloud"> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=530070817&amp;site=qq&amp;menu=yes" target="_blank"
+            class="tagc1">530070817</a> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=530070817&amp;site=qq&amp;menu=yes"
+            target="_blank" class="tagc1">My QQ</a> <a href="mailto:530070817@qq.com" target="_blank" class="tagc5">530070817@qq.com</a>
+          <a href="mailto:530070817@qq.com" target="_blank" class="tagc5">My E-mail</a> <a href="#" target="_blank"
+            class="tagc2">My Tel</a> <a href="#" target="_blank" class="tagc2">131xxxxxxxx</a> <a href="https://weibo.com/u/2641638461/home"
+            target="_blank" class="tagc3">新浪微博</a> <a href="https://weibo.com/u/2641638461/home" target="_blank" class="tagc3">https://weibo.com/u/2641638461/home</a>
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=530070817&amp;site=qq&amp;menu=yes" target="_blank" class="tagc1">530070817</a>
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=530070817&amp;site=qq&amp;menu=yes" target="_blank" class="tagc1">My
+            QQ</a> <a href="mailto:530070817@qq.com" target="_blank" class="tagc5">530070817@qq.com</a> <a href="mailto:530070817@qq.com"
+            target="_blank" class="tagc5">My E-mail</a> <a href="#" target="_blank" class="tagc2">My Tel</a> <a href="#"
+            target="_blank" class="tagc2">131xxxxxxxx</a> <a href="https://weibo.com/u/2641638461/home" target="_blank"
+            class="tagc3">新浪微博</a> <a href="https://weibo.com/u/2641638461/home" target="_blank" class="tagc3">https://weibo.com/u/2641638461/home</a>
+        </div>
+      </div>
+      <h2 class="ctitle"><b>友情链接</b></h2>
+      <div class="cloud">
+        <ul>
+          <li><a href="http://www.baidu.com" target="_blank">百度</a></li>
+          <li><a href="http://www.sina.com.cn/" target="_blank">新浪</a></li>
+          <li><a href="https://www.douban.com/" target="_blank">豆瓣网</a></li>
+        </ul>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <div id="time"></div>
+    <script type="text/javascript">
+      setInterval(function () {
+        var time = new Date();
+        var year = time.getFullYear();  //获取年份  
+        var month = time.getMonth() + 1;  //获取月份  
+        var day = time.getDate();   //获取日期  
+        var hour = checkTime(time.getHours());   //获取时  
+        var minite = checkTime(time.getMinutes());  //获取分  
+        var second = checkTime(time.getSeconds());  //获取秒  
+        /****当时、分、秒、小于10时，则添加0****/
+        function checkTime(i) {
+          if (i < 10) return "0" + i;
+          return i;
+        }
+        var box = document.getElementById("time");
+        box.innerHTML = year + "年" + month + "月" + day + "日  " + hour + ":" + minite + ":" + second;
+      }, 1000);     //setInterval(fn,i) 定时器，每隔i秒执行fn  
+    </script>
+  </footer>
+  <script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+      (function () {
+        window.scrollReveal = new scrollReveal({ reset: true });
+      })();
+    };
+  </script>
+  <div class="guide">
+    <div class="guide-wrap"><a href="fankui.html" class="report" title="反馈"><span>反馈</span></a> <a href="javascript:window.scrollTo(0,0)"
+        class="top" title="回顶部"><span>回顶部</span></a> </div>
+  </div>
+</body>
+
+</html>

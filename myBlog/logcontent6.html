@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <meta charset="gbk">
+  <title>个人博客</title>
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/logcontent.css" rel="stylesheet">
+  <script src="js/tool/scrollReveal.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo" data-scroll-reveal="enter right over 1s"><img src="images/logo.png"></div>
+    <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s"><a href="index.html"><span>首页</span><span
+          class="en">Home</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a><a href="concern.html"><span>我的关注</span><span
+          class="en">Interest</span></a><a href="log.html"><span>个人日志</span><span class="en">Log</span></a><a href="xczs.html"><span>相册展示</span><span
+          class="en">Show</span></a><a href="contact.html"><span>联系我</span><span class="en">Contact</span></a><a href="gbook.html"><span>留言</span><span
+          class="en">Saying</span></a><a href="game.html"><span>游戏</span><span class="en">Game</span></a></nav>
+  </header>
+  <article>
+    <div class="container">
+      <div class="blog">
+        <div class="about left">
+          <ul>
+            <h4 class="atitle"><span>2016-01-07</span>【转载】高效jquery（二）</h4>
+            <p class="newsnav">您现在的位置是:<a href="index.html">首页</a>&nbsp;>&nbsp;<a href="log.html">个人日志</a></p>
+            <p><strong>1、选择捷径</strong></p>
+            <div class="shili">
+              <p> // 糟糕</p>
+              <p>d = $('#ele').height();</p>
+              <p>$('#ele').css('height',d-20);</p>
+              <p>// 建议</p>
+              <p>$ele = $('#ele');</p>
+              <p>d = $ele.height();</p>
+              <p>$ele.css('height',d-20)</p>
+            </div>
+            <p><strong>2、避免全局变量</strong></p>
+            <div class="shili">
+              <p> // 糟糕</p>
+              <p> $ele = $('#ele');</p>
+              <p> d = $ele.height();</p>
+              <p> $ele.css('height',d-20);</p>
+              <p>$('#ele').css('height',d-20);</p>
+              <p>// 建议</p>
+              <p>var $ele = $('#ele');</p>
+              <p>var d = $ele.height();</p>
+              <p>$ele.css('height',d-20);</p>
+            </div>
+            <p><strong>3、链式操作</strong></p>
+            <div class="shili">
+              <p>// 糟糕</p>
+              <p>$second.html(value);</p>
+              <p>$second.on('click',function(){</p>
+              <p> alert('hello everybody');</p>
+              <p>});</p>
+              <p>$second.fadeIn('slow');</p>
+              <p>$second.animate({height:'120px'},500);</p>
+              <p>// 建议</p>
+              <p>$second.html(value);</p>
+              <p>$second.on('click',function(){</p>
+              <p> alert('hello everybody');</p>
+              <p>}).fadeIn('slow').animate({height:'120px'},500);</p>
+            </div>
+            <p><strong>4、维持代码可读性</strong></p>
+            <div class="shili">
+              <p>伴随着精简代码和使用链式的同时，可能带来代码的难以阅读。添加缩紧和换行能起到很好的效果。</p>
+            </div>
+            <p><strong>5、利用CDN</strong></p>
+            <div class="shili">
+              <p>CND能保证选择离用户最近的缓存并迅速响应。</p>
+            </div>
+            <p>转载请注明：<a href="http://www.chennoted.com">辰辰个人博客</a> &raquo; <a href="http://www.chennoted.com/251.html">web前端开发必备网站</a></p>
+          </ul>
+          <div class="keybq">
+            <p><span>关键字词</span>：高效,jQuery</p>
+          </div>
+          <div class="nextinfo">
+            <p>上一篇：<a href='logcontent5.html'>【转载】使用CSS3制作文字、图片倒影</a></p>
+            <p>下一篇：<a href='#'>暂无</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <div id="time"></div>
+    <script type="text/javascript">
+      setInterval(function () {
+        var time = new Date();
+        var year = time.getFullYear();  //获取年份  
+        var month = time.getMonth() + 1;  //获取月份  
+        var day = time.getDate();   //获取日期  
+        var hour = checkTime(time.getHours());   //获取时  
+        var minite = checkTime(time.getMinutes());  //获取分  
+        var second = checkTime(time.getSeconds());  //获取秒  
+        /****当时、分、秒、小于10时，则添加0****/
+        function checkTime(i) {
+          if (i < 10) return "0" + i;
+          return i;
+        }
+        var box = document.getElementById("time");
+        box.innerHTML = year + "年" + month + "月" + day + "日  " + hour + ":" + minite + ":" + second;
+      }, 1000);     //setInterval(fn,i) 定时器，每隔i秒执行fn  
+    </script>
+  </footer>
+  <script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+      (function () {
+        window.scrollReveal = new scrollReveal({ reset: true });
+      })();
+    };
+  </script>
+  <div class="guide">
+    <div class="guide-wrap"><a href="fankui.html" class="report" title="反馈"><span>反馈</span></a> <a href="javascript:window.scrollTo(0,0)"
+        class="top" title="回顶部"><span>回顶部</span></a> </div>
+  </div>
+</body>
+
+</html>

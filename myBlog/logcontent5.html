@@ -1,0 +1,186 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <meta charset="gbk">
+  <title>个人博客</title>
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/logcontent.css" rel="stylesheet">
+  <script src="js/tool/scrollReveal.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo" data-scroll-reveal="enter right over 1s"><img src="images/logo.png"></div>
+    <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s"><a href="index.html"><span>首页</span><span
+          class="en">Home</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a><a href="concern.html"><span>我的关注</span><span
+          class="en">Interest</span></a><a href="log.html"><span>个人日志</span><span class="en">Log</span></a><a href="xczs.html"><span>相册展示</span><span
+          class="en">Show</span></a><a href="contact.html"><span>联系我</span><span class="en">Contact</span></a><a href="gbook.html"><span>留言</span><span
+          class="en">Saying</span></a><a href="game.html"><span>游戏</span><span class="en">Game</span></a></nav>
+  </header>
+  <article>
+    <div class="container">
+      <div class="blog">
+        <div class="about left">
+          <ul>
+            <h4 class="atitle"><span>2016-01-07</span>【转载】使用CSS3制作文字、图片倒影</h4>
+            <p class="newsnav">您现在的位置是:<a href="index.html">首页</a>&nbsp;>&nbsp;<a href="log.html">个人日志</a></p>
+            <p>CSS3制作文字、图片倒影需要涉及到使用CSS3.0新属性之box-reflect。box-reflect属性目前仅在Chrome、Safari和Opera浏览器下支持，但这并不影响我们来学习这个属性的应用。</p>
+            <p>box-reflect语法：</p>
+            <div class="shili">
+              <p>box-reflect：none | &lt;direction&gt; &lt;offset&gt;? &lt;mask-box-image&gt;?</p>
+              <p>&nbsp; &nbsp; &lt;direction&gt; = above | below | left | right</p>
+              <p>&nbsp; &nbsp; &lt;offset&gt; = &lt;length&gt; | &lt;percentage&gt;</p>
+              <p>&nbsp; &nbsp; &lt;mask-box-image&gt; = none | &lt;url&gt; | &lt;linear-gradient&gt; |
+                &lt;radial-gradient&gt; | &lt;repeating-linear-gradient&gt; | &lt;repeating-radial-gradient&gt;</p>
+            </div>
+            <p>&nbsp; &nbsp; 默认值：none</p>
+            <p>&nbsp; &nbsp; 适用于：所有元素</p>
+            <p>&nbsp; &nbsp; 继承性：无&nbsp;</p>
+            <p>由于此属性并不是W3C标准属性，在具体使用之时，还是需要添加浏览器的私有属性，根据浏览器的兼容性，使用box-reflect时需要添加-webkit和前缀：</p>
+            <div class="shili">
+              <p>-webkit-box-reflect：none | &lt;direction&gt; &lt;offset&gt;? &lt;mask-box-image&gt;?</p>
+              <p>box-reflect：none | &lt;direction&gt; &lt;offset&gt;? &lt;mask-box-image&gt;?</p>
+            </div>
+            <p>取值：</p>
+            <div class="shili">
+              <p>&nbsp; &nbsp; none：无倒影</p>
+              <p>&nbsp; &nbsp; &lt;direction&gt;　Demo: 简单图片倒影 See with Webkit</p>
+              <p>&nbsp; &nbsp; above：指定倒影在对象的上边</p>
+              <p>&nbsp; &nbsp; below：指定倒影在对象的下边</p>
+              <p>&nbsp; &nbsp; left：指定倒影在对象的左边</p>
+              <p>&nbsp; &nbsp; right：指定倒影在对象的右边</p>
+              <p>&nbsp; &nbsp; &lt;offset&gt;　Demo: 图片与倒影间隔 See with Webkit</p>
+              <p>&nbsp; &nbsp; &lt;length&gt;：用长度值来定义倒影与对象之间的间隔。可以为负值</p>
+              <p>&nbsp; &nbsp; &lt;percentage&gt;：用百分比来定义倒影与对象之间的间隔。可以为负值</p>
+              <p>&nbsp; &nbsp; &lt;mask-box-image&gt;　Demo: 更真实的图片倒影 文字倒影与渐变 See with Webkit</p>
+              <p>&nbsp; &nbsp; none：无遮罩图像</p>
+              <p>&nbsp; &nbsp; &lt;url&gt;：使用绝对或相对地址指定遮罩图像。</p>
+              <p>&nbsp; &nbsp; &lt;linear-gradient&gt;：使用线性渐变创建遮罩图像。</p>
+              <p>&nbsp; &nbsp; &lt;radial-gradient&gt;：使用径向(放射性)渐变创建遮罩图像。</p>
+              <p>&nbsp; &nbsp; &lt;repeating-linear-gradient&gt;：使用重复的线性渐变创建背遮罩像。</p>
+              <p>&nbsp; &nbsp; &lt;repeating-radial-gradient&gt;：使用重复的径向(放射性)渐变创建遮罩图像。</p>
+            </div>
+            <p><strong>图片倒影：</strong></p>
+            <p>假设我们需要给一张图片做倒影效果，其结构其实非常简单：</p>
+            <div class="box-reflect"><img src="images/1cba05d9e0c7cfcfa897394b85f7e5f9.jpg" alt="使用CSS3制作图片倒影" width="245"
+                height="200" /></div>
+            <p>根据前面的语法介绍，要让倒影在对象的右侧，我们只需要给box-reflect属性取值为right即可：</p>
+            <div class="shili">
+              <p>.box-reflect img {</p>
+              <ol class="properties monospace" style="box-sizing: border-box; font-family: Consolas, 'Lucida Console', monospace; margin: 0px; padding: 2px 4px 0px 0px; list-style: none; clear: both; color: rgb(34, 34, 34); white-space: nowrap;">
+                <li title="" style="box-sizing: border-box; margin-left: 0px !important; padding-left: 38px; white-space: normal; text-overflow: ellipsis; overflow: hidden; cursor: auto;"><span
+                    class="webkit-css-property" title="-webkit-box-reflect: right;" style="box-sizing: border-box; color: rgb(200, 0, 0); margin-left: -38px;">-webkit-box-reflect</span>:&nbsp;<span
+                    class="value" style="box-sizing: border-box;">right</span>;</li>
+              </ol>
+              <p>
+                <font face="Consolas, Lucida Console, monospace">box-reflect:right;</font>
+              </p>
+              <p>}</p>
+            </div>
+            <p>效果如图：</p>
+            <div><img src="images/1cba05d9e0c7cfcfa897394b85f7e5f9.jpg" alt="使用CSS3制作图片倒影" width="245" height="200"
+                style="-webkit-box-reflect: right;box-reflect:right" /></div>
+            <div class="shili">
+              <p>&lt;img src=&quot;图片.jpg&quot; alt=&quot;使用CSS3制作图片倒影&quot; style=&quot;-webkit-box-reflect:
+                right;box-reflect:right&quot;&gt;</p>
+            </div>
+            <p><strong>文字倒影：</strong></p>
+            <p>要让倒影在对象的下方，我们只需要给box-reflect属性取值为below即可：</p>
+            <div class="shili">
+              <p>-webkit-box-reflect: below;</p>
+              <p>box-reflect: below;</p>
+            </div>
+            <p style="-webkit-box-reflect: below;box-reflect: below;"><span style="color: rgb(51, 153, 102);"><span
+                  style="font-size: 14px;"><strong>记录&middot;回忆</strong></span></span></p>
+            <p>特别提示：在此示例中，我们没有为倒影提供了一个空白区，所以下面这一行就占据了位置，要解决这个问题，就得提供一个空白区域出来，使用margin：margin:20px 0;</p>
+            <p style="-webkit-box-reflect: below;box-reflect: below; margin:20px 0"><strong style="color: rgb(51, 153, 102); font-size: 14px;">记录&middot;回忆</strong></p>
+            <p><strong>倒影与对象之间的间距：</strong></p>
+            <div>了解完生成倒影的方向之后，我们一起来看第二个属性值&lt;offset&gt;。有时候大家可能会有这样的需求，我虽然将倒影生成出来了，但我想让生成的倒影与对象(原图)之间有一定的间距。那么这个时候我们就需要使用到box-reflect属性中的第二个属性值&lt;offset&gt;。</div>
+            <div>随便拿一个示例来说做演示，假设对象生成的倒影在底部，而且需要让生成的倒影离自身有一个20px的间距，此时我们只需要这样做：</div>
+            <div class="shili">
+              <p>.box-reflect img {</p>
+              <ol class="properties monospace" style="box-sizing: border-box; font-family: Consolas, 'Lucida Console', monospace; margin: 0px; padding: 2px 4px 0px 0px; list-style: none; clear: both; color: rgb(34, 34, 34); white-space: nowrap;">
+                <li title="" style="box-sizing: border-box; padding-left: 38px; white-space: normal; text-overflow: ellipsis; overflow: hidden; cursor: auto; margin-left: 0px !important;"><span
+                    class="webkit-css-property" title="-webkit-box-reflect: right;" style="box-sizing: border-box; color: rgb(200, 0, 0); margin-left: -38px;">-webkit-box-reflect</span>:&nbsp;<span
+                    class="value" style="box-sizing: border-box;">right 20px</span>;</li>
+              </ol>
+              <p>
+                <font face="Consolas, Lucida Console, monospace">box-reflect:right 20px;</font>
+              </p>
+              <p>}</p>
+            </div>
+            <p>效果如图：</p>
+            <div><img src="images/1cba05d9e0c7cfcfa897394b85f7e5f9.jpg" alt="使用CSS3制作图片倒影" width="245" height="200"
+                style="-webkit-box-reflect: right 20px;box-reflect:right 20px" /></div>
+            <div class="shili">
+              <p>&lt;img src=&quot;图片.jpg&quot; alt=&quot;使用CSS3制作图片倒影&quot; style=&quot;-webkit-box-reflect: right
+                20px;box-reflect:right 20px&quot;&gt;</p>
+            </div>
+            <p><strong>给倒影添加遮罩效果:</strong></p>
+            <p>左右倒影：</p>
+            <p>&nbsp; &nbsp; -webkit-box-reflect: left 1px -webkit-gradient(linear, 0% 100%,100%
+              100%,from(rgba(255,255,255,0)), to(white));</p>
+            <p>&nbsp; &nbsp; -webkit-box-reflect: right 1px -webkit-gradient(linear, 0% 100%,100% 100%,
+              from(rgba(255,255,255,0)), to(white));</p>
+            <p>上下倒影：</p>
+            <p>&nbsp; &nbsp; -webkit-box-reflect: above 1px -webkit-gradient(linear, 0% 100%,100% 100%,
+              from(rgba(255,255,255,0)), to(white));</p>
+            <p>&nbsp; &nbsp;-webkit-box-reflect: below 1px -webkit-gradient(linear, 0% 100%,100% 100%,
+              from(rgba(255,255,255,0)), to(white));</p>
+            <p>字体倒影：</p>
+            <p>&nbsp; &nbsp; -webkit-box-reflect: below 1px -webkit-gradient(linear, 0 0, 0 100%, from(transparent),
+              color-stop(.5, transparent), to(rgba(3,3,3,.2)));</p>
+            <p>文字渐变+倒影：</p>
+            <p>&nbsp; &nbsp; -webkit-box-reflect: below 1px -webkit-gradient(linear, 0 0, 0 100%, from(transparent),
+              color-stop(.5, transparent), to(rgba(3,3,3,.2)));</p>
+            <p>&nbsp; &nbsp; background: -webkit-linear-gradient(top, rgba(174,188,191,1) 0%,rgba(110,119,116,1)
+              50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%);</p>
+            <p>&nbsp; &nbsp; -webkit-background-clip: text;-webkit-text-fill-color: transparent;</p>
+          </ul>
+          <div class="keybq">
+            <p><span>关键字词</span>：滚动条,css</p>
+          </div>
+          <div class="nextinfo">
+            <p>上一篇：<a href='logcontent4.html'>【转载】三步实现滚动条触动css动画效果</a></p>
+            <p>下一篇：<a href='logcontent6.html'>【转载】高效jquery（二）</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <div id="time"></div>
+    <script type="text/javascript">
+      setInterval(function () {
+        var time = new Date();
+        var year = time.getFullYear();  //获取年份  
+        var month = time.getMonth() + 1;  //获取月份  
+        var day = time.getDate();   //获取日期  
+        var hour = checkTime(time.getHours());   //获取时  
+        var minite = checkTime(time.getMinutes());  //获取分  
+        var second = checkTime(time.getSeconds());  //获取秒  
+        /****当时、分、秒、小于10时，则添加0****/
+        function checkTime(i) {
+          if (i < 10) return "0" + i;
+          return i;
+        }
+        var box = document.getElementById("time");
+        box.innerHTML = year + "年" + month + "月" + day + "日  " + hour + ":" + minite + ":" + second;
+      }, 1000);     //setInterval(fn,i) 定时器，每隔i秒执行fn  
+    </script>
+  </footer>
+  <script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+      (function () {
+        window.scrollReveal = new scrollReveal({ reset: true });
+      })();
+    };
+  </script>
+  <div class="guide">
+    <div class="guide-wrap"><a href="fankui.html" class="report" title="反馈"><span>反馈</span></a> <a href="javascript:window.scrollTo(0,0)"
+        class="top" title="回顶部"><span>回顶部</span></a> </div>
+  </div>
+</body>
+
+</html>

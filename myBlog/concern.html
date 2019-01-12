@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html>
+
+<head>
+  <meta charset="gbk">
+  <title>个人博客</title>
+  <link href="css/base.css" rel="stylesheet">
+  <link href="css/concern.css" rel="stylesheet">
+  <script src="js/tool/scrollReveal.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo" data-scroll-reveal="enter right over 1s"><img src="images/logo.png"></div>
+    <nav class="topnav" data-scroll-reveal="enter bottom over 1s after 1s"><a href="index.html"><span>首页</span><span
+          class="en">Home</span></a><a href="about.html"><span>关于我</span><span class="en">About</span></a><a href="concern.html"><span>我的关注</span><span
+          class="en">Interest</span></a><a href="log.html"><span>个人日志</span><span class="en">Log</span></a><a href="xczs.html"><span>相册展示</span><span
+          class="en">Show</span></a><a href="contact.html"><span>联系我</span><span class="en">Contact</span></a><a href="gbook.html"><span>留言</span><span
+          class="en">Saying</span></a><a href="game.html"><span>游戏</span><span class="en">Game</span></a></nav>
+  </header>
+  <article>
+    <div class="container">
+      <h2 class="ctitle"><b>我的关注</b> <span>善于学习别人的长处，知难而进终会成功。</span></h2>
+      <div class="blog" data-scroll-reveal="enter top">
+        <ul class="cbp_tmtimeline">
+          <li>
+            <time class="cbp_tmtime"><span>01-05</span> <span>2016</span></time>
+            <div class="cbp_tmicon"></div>
+            <div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s">
+              <h2>《剑指Offer:名企面试官精讲典型编程题》</h2>
+              <p><span class="blogpic"><a href="concerncontent1.html"><img src="images/jianzhioffer.jpg"></a></span>《剑指Offer:名企面试官精讲典型编程题》剖析了50个典型的程序员面试题，从基础知识、代码质量、解题思路、优化效率和综合能力五个方面系统整理了影响面试的5个要点...</p>
+              <a href="concerncontent1.html" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+            </div>
+          </li>
+          <li>
+            <time class="cbp_tmtime"><span>01-04</span> <span>2016</span></time>
+            <div class="cbp_tmicon"></div>
+            <div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s">
+              <h2>《Head First设计模式》(中文版)</h2>
+              <p><span class="blogpic"><a href="concerncontent2.html"><img src="images/headfirstsheji.jpg"></a></span>《Head
+                First设计模式》(中文版)共有14章，每章都介绍了几个设计模式，完整地涵盖了四人组版本全部23个设计模式Strategy、Observer、Decorator...</p>
+              <a href="concerncontent2.html" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+            </div>
+          </li>
+          <li>
+            <time class="cbp_tmtime"><span>01-03</span> <span>2016</span></time>
+            <div class="cbp_tmicon"></div>
+            <div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s">
+              <h2>《高效程序员的45个习惯》</h2>
+              <p><span class="blogpic"><a href="#"><img src="images/gaoxiao.jpg"></a></span>本书简明实用、见解深刻，总结了高效程序员在开发过程中的45个个人习惯、思想观念和方法，有助于开发人员在开发进程、编码工作、开发者态度、项目和团队管理...</p>
+              <a href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+            </div>
+          </li>
+          <li>
+            <time class="cbp_tmtime"><span>01-02</span> <span>2016</span></time>
+            <div class="cbp_tmicon"></div>
+            <div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s">
+              <h2>《Head First HTML与CSS（第2版）》</h2>
+              <p><span class="blogpic"><a href="#"><img src="images/headfirsthtml.jpg"></a></span>是不是已经厌倦了那些深奥的HTML书？你可能在抱怨，只有成为专家之后才能读懂那些书。那么，找一本新修订的《Head
+                First HTML与CSS（第2版）》吧，来真正学习HTML...</p>
+              <a href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+            </div>
+          </li>
+          <li>
+            <time class="cbp_tmtime"><span>01-01</span> <span>2016</span></time>
+            <div class="cbp_tmicon"></div>
+            <div class="cbp_tmlabel" data-scroll-reveal="enter right over 1s">
+              <h2>《JavaScript高级程序设计（第3版）》</h2>
+              <p><span class="blogpic"><a href="#"><img src="images/javascriptgaoji.jpg"></a></span>本书是JavaScript
+                超级畅销书的最新版。ECMAScript 5 和HTML5 在标准之争中双双胜出，使大量专有实现和客户端扩展正式进入规范...</p>
+              <a href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <div id="time"></div>
+    <script type="text/javascript">
+      setInterval(function () {
+        var time = new Date();
+        var year = time.getFullYear();  //获取年份  
+        var month = time.getMonth() + 1;  //获取月份  
+        var day = time.getDate();   //获取日期  
+        var hour = checkTime(time.getHours());   //获取时  
+        var minite = checkTime(time.getMinutes());  //获取分  
+        var second = checkTime(time.getSeconds());  //获取秒  
+        /****当时、分、秒、小于10时，则添加0****/
+        function checkTime(i) {
+          if (i < 10) return "0" + i;
+          return i;
+        }
+        var box = document.getElementById("time");
+        box.innerHTML = year + "年" + month + "月" + day + "日  " + hour + ":" + minite + ":" + second;
+      }, 1000);     //setInterval(fn,i) 定时器，每隔i秒执行fn  
+    </script>
+  </footer>
+  <script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+      (function () {
+        window.scrollReveal = new scrollReveal({ reset: true });
+      })();
+    };
+  </script>
+  <div class="guide">
+    <div class="guide-wrap"><a href="fankui.html" class="report" title="反馈"><span>反馈</span></a> <a href="javascript:window.scrollTo(0,0)"
+        class="top" title="回顶部"><span>回顶部</span></a> </div>
+  </div>
+</body>
+
+</html>

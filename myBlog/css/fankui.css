@@ -1,0 +1,11 @@
+@charset "gbk";
+/* blog */
+.blog { margin: 30px 20px;
+overflow: hidden 
+}
+textarea{
+overflow:hidden;
+resize:none;
+}
+
+

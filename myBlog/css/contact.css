@@ -1,0 +1,114 @@
+@charset "gbk";
+/* blog */
+.blog {
+	margin: 30px 20px;
+	overflow: hidden
+}
+/*±Í«©‘∆*/
+.cloud {
+	width: 350px;
+	clear: both;
+	overflow: hidden;
+	margin-bottom:20px;
+}
+.cloud ul {
+	margin: 20px 20px;
+}
+.cloud ul li {
+	font-size:24px;
+	line-height: 30px;
+	height: 30px;
+	display: block;
+	background: #999;
+	float: left;
+	padding: 3px 11px;
+	margin: 10px 10px 0 0;
+	border-radius: 8px;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.cloud ul li a {
+	color: #FFF
+}
+.cloud ul li:nth-child(8n-7) {
+background: #8A9B0F
+}
+.cloud ul li:nth-child(8n-6) {
+background: #EB6841
+}
+.cloud ul li:nth-child(8n-5) {
+background: #3FB8AF
+}
+.cloud ul li:nth-child(8n-4) {
+background: #FE4365
+}
+.cloud ul li:nth-child(8n-3) {
+background: #FC9D9A
+}
+.cloud ul li:nth-child(8n-2) {
+background: #EDC951
+}
+.cloud ul li:nth-child(8n-1) {
+background: #C8C8A9
+}
+.cloud ul li:nth-child(8n) {
+background: #83AF9B
+}
+.cloud ul li:first-child {
+	background: #036564
+}
+.cloud ul li:last-child {
+	background: #3299BB
+}
+.cloud ul li:hover {
+	border-radius: 0;
+	text-shadow: #000 1px 1px 1px
+}
+/* tagscloud */
+#tagscloud {
+	float:left;
+	width:250px;
+	height:260px;
+	position:relative;
+	font-size:16px;
+	color:#333;
+	margin:20px auto 0;
+	text-align:center;
+}
+#tagscloud a {
+	position:absolute;
+	top:0px;
+	left:0px;
+	color:#333;
+	font-family:Arial;
+	text-decoration:none;
+	margin:0 10px 15px 0;
+	line-height:25px;
+	text-align:center;
+	font-size:16px;
+	padding:1px 5px;
+	display:inline-block;
+	border-radius:3px;
+}
+#tagscloud a.tagc1 {
+	background:#666;
+	color:#fff;
+}
+#tagscloud a.tagc2 {
+	background:#F16E50;
+	color:#fff;
+}
+#tagscloud a.tagc3 {
+	background:#3FF;
+	color:#fff;
+}
+#tagscloud a.tagc5 {
+	background:#006633;
+	color:#fff;
+}
+#tagscloud a:hover {
+	color:#fff;
+	background:#0099ff;
+}
