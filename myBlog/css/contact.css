@@ -1,10 +1,10 @@
-@charset "gbk";
+ï»¿@charset "utf-8";
 /* blog */
 .blog {
 	margin: 30px 20px;
 	overflow: hidden
 }
-/*±êÇ©ÔÆ*/
+/*æ ‡ç­¾äº‘*/
 .cloud {
 	width: 350px;
 	clear: both;

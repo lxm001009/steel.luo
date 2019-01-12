@@ -1,11 +1,11 @@
-@charset "gbk";
-/* ¹²ÓÃcss */
+ï»¿@charset "utf-8";
+/* å…±ç”¨css */
 * {
 	margin: 0;
 	padding: 0
 }
 body {
-	font: 14px "Î¢ÈíÑÅºÚ", Arial, Helvetica, sans-serif;
+	font: 14px "å¾®è½¯é›…é»‘", Arial, Helvetica, sans-serif;
 	background: url(../images/acc.jpg) no-repeat center top #000;
 	color: #fff
 }
@@ -16,7 +16,7 @@ img {
 ul, li {
 	list-style: none;
 }
-/*Ä¬ÈÏÁ´½ÓÑÕÉ« */
+/*é»˜è®¤é“¾æŽ¥é¢œè‰² */
 a:link, a:visited, a:active {
 	text-decoration: none;
 	color: #fff
@@ -127,7 +127,7 @@ footer {
 	width: 26px;
 	text-align: center;
 	display: inline-block
-}/* Õë¶ÔIE6 */
+}/* é’ˆå¯¹IE6 */
 .page>b, .page a:hover {
 	background: #2a455d;
 	color: #FFF;
@@ -178,7 +178,7 @@ _top:expression(documentElement.scrollTop+documentElement.clientHeight - this.cl
 	background:url(../images/sprite_v2.png) no-repeat;
 	margin-top:10px;
 	text-decoration:none;
-	font:16px/50px "¿¬Ìå";
+	font:16px/50px "æ¥·ä½“";
 	text-align:center;
 	color:#FFF;
 	border-radius:2px;

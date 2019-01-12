@@ -1,4 +1,4 @@
-@charset "gbk";
+ï»¿@charset "utf-8";
 /* blog */
 .blog {
 	margin: 30px 20px;
@@ -208,7 +208,7 @@ a.readmore {
 	overflow: hidden;
 	clear: both
 }
-/* Í¼Æ¬ÏòÉÏ·­×ªµÄ¶¯»­Ğ§¹û */
+/* å›¾ç‰‡å‘ä¸Šç¿»è½¬çš„åŠ¨ç”»æ•ˆæœ */
 .info figure {
 	display: inline-block;
 	width: 630px;
@@ -237,7 +237,7 @@ transition: opacity .75s ease-out;
 .info figure:hover figcaption {
 	opacity: 1;
 }
-/* ÓÃopacity ÉèÖÃÊó±ê·ÅÉÏÈ¥ÏÔÊ¾ÎÄ×ÖµÄĞ§¹û */
+/* ç”¨opacity è®¾ç½®é¼ æ ‡æ”¾ä¸Šå»æ˜¾ç¤ºæ–‡å­—çš„æ•ˆæœ */
 .info figcaption strong {
 	display: block;
 	line-height: 40px
@@ -257,7 +257,7 @@ transition: opacity .75s ease-out;
 .card p:first-child {
 	padding: 40px 0 0 40px
 }
-/* ½á¹¹ĞÔÎ±ÀàÑ¡Ôñ·û Ñ¡ÔñµÚÒ»¸öp±êÇ©£¬²¢ÇÒÉèÖÃÉÏ¡¢×ó¾àÀëÊÇ40px*/
+/* ç»“æ„æ€§ä¼ªç±»é€‰æ‹©ç¬¦ é€‰æ‹©ç¬¬ä¸€ä¸ªpæ ‡ç­¾ï¼Œå¹¶ä¸”è®¾ç½®ä¸Šã€å·¦è·ç¦»æ˜¯40px*/
 .card p {
 	padding: 0 0 0 40px;
 	line-height: 28px;

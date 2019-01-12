@@ -1,13 +1,13 @@
-@charset "gbk";
+锘緻charset "utf-8";
 /* about */
 /* banner */
 .banner { height: 180px; text-align: center; overflow: hidden; margin: 30px; line-height: 30px; text-shadow: #fff 1px 1px 1px; background: url(../images/banner_top.jpg) no-repeat -90px center; color: #333; padding: 40px 0 0 0 }
-/*文字动画效果*/
+/*???????效??*/
 
-/*纪念日*/
+/*??????*/
 .memorial_day { overflow: hidden; position: relative; padding: 60px; }
 .time_axis { background: #e9f5fb; height: 6px; width: 100%; animation: time_a 5s; -moz-animation: time_a 5s; /* Firefox */ -webkit-animation: time_a 5s; /* Safari and Chrome */ -o-animation: time_a 5s; /* Opera */ }
-/*时间轴动画效果*/
+/*???????效??*/
 @keyframes time_a { 0% {
 width:0px;
 }

@@ -1,8 +1,8 @@
-@charset "gbk";
+ï»¿@charset "utf-8";
 .gbook { margin: 30px }
 /* loading  */
 #fountainG { position: relative; width: 240px; height: 29px; margin-bottom: 30px }
-#fountainG li { position: absolute; top: 0;/* background: #6dabdc; Ä¬ÈÏÑÕÉ« */ width: 29px; height: 29px; -moz-animation: bounce_fountainG 1.2s linear infinite; -moz-transform: scale(.3); -moz-border-radius: 19px; -webkit-animation: bounce_fountainG 1.2s linear infinite; -webkit-transform: scale(.3); -webkit-border-radius: 19px; -ms-animation: bounce_fountainG 1.2s linear infinite; -ms-transform: scale(.3); -ms-border-radius: 19px; -o-animation: bounce_fountainG 1.2s linear infinite; -o-transform: scale(.3); -o-border-radius: 19px; animation: bounce_fountainG 1.2s linear infinite; transform: scale(.3); border-radius: 19px; }
+#fountainG li { position: absolute; top: 0;/* background: #6dabdc; é»˜è®¤é¢œè‰² */ width: 29px; height: 29px; -moz-animation: bounce_fountainG 1.2s linear infinite; -moz-transform: scale(.3); -moz-border-radius: 19px; -webkit-animation: bounce_fountainG 1.2s linear infinite; -webkit-transform: scale(.3); -webkit-border-radius: 19px; -ms-animation: bounce_fountainG 1.2s linear infinite; -ms-transform: scale(.3); -ms-border-radius: 19px; -o-animation: bounce_fountainG 1.2s linear infinite; -o-transform: scale(.3); -o-border-radius: 19px; animation: bounce_fountainG 1.2s linear infinite; transform: scale(.3); border-radius: 19px; }
 #fountainG li:first-child { left: 0; -moz-animation-delay: 0.48s; -webkit-animation-delay: 0.48s; -ms-animation-delay: 0.48s; -o-animation-delay: 0.48s; animation-delay: 0.48s; }
 #fountainG li:nth-child(2) { left: 30px; -moz-animation-delay: 0.6s; -webkit-animation-delay: 0.6s; -ms-animation-delay: 0.6s; -o-animation-delay: 0.6s; animation-delay: 0.6s; }
 #fountainG li:nth-child(3) { left: 60px; -moz-animation-delay: 0.72s; -webkit-animation-delay: 0.72s; -ms-animation-delay: 0.72s; -o-animation-delay: 0.72s; animation-delay: 0.72s; }
@@ -63,7 +63,7 @@ background-color:#FFFFFF;
 .about_girl { width: 100%; margin: 10px auto 0; overflow: hidden }
 .about_girl span { float: left; margin-right: 30px }
 .about_girl p { margin: 20px; background: #ececec; color: #444; float: left; padding: 20px; width: 46%; border-radius: 6px; position: relative; box-shadow: inset #999 -1px -1px 1px; ; text-shadow: #fff 1px 1px 0px; width: 450px }
-.about_girl p::before { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #ececec transparent; position: absolute; left: -20px; top: 24px; }/* Èý½ÇÐÎ */
+.about_girl p::before { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #ececec transparent; position: absolute; left: -20px; top: 24px; }/* ä¸‰è§’å½¢ */
 .gbko {
     background: rgb(255, 255, 255);
     padding: 0 30px 30px 30px;
@@ -77,7 +77,7 @@ margin:10px auto;
 padding-top:10px;
 }
 #msgBox form h2{font-weight:600;
-font:400 18px/1.5 "¿¬Ìå";
+font:400 18px/1.5 "æ¥·ä½“";
 }
 #msgBox form{padding:0 20px 15px;
 }
@@ -86,7 +86,7 @@ border:1px solid #d0d0d0;
 border-radius:6px;
 background:#fff ;
 padding:3px 5px;
-font:14px/1.5 "¿¬Ìå";
+font:14px/1.5 "æ¥·ä½“";
 }
 #userName.active,#conBox.active{border:1px solid #7abb2c;
 }
@@ -132,7 +132,7 @@ height:30px;
 margin-left:10px;
 background-color:#CCC;
 }
-#msgBox form .maxNum{font:26px/30px "¿¬Ìå";padding:0 5px;
+#msgBox form .maxNum{font:26px/30px "æ¥·ä½“";padding:0 5px;
 }
 #msgBox .list{padding:10px;
 }
@@ -177,7 +177,7 @@ width:1000px;
 font-size:14px;
 margin-left:10px;
 color:#000;
-font-family:"¿¬Ìå";
+font-family:"æ¥·ä½“";
 word-wrap:break-word;
 }
 #msgBox .list .userName{display:inline;
@@ -189,12 +189,12 @@ padding-right:5px;
 word-wrap:break-word;
 }
 #msgBox .list .times{color:#889db6;
-font:12px/18px "¿¬Ìå";
+font:12px/18px "æ¥·ä½“";
 margin-top:5px;
 overflow:hidden;
 }
 #msgBox .list .times span{float:left;
-font:"¿¬Ìå";
+font:"æ¥·ä½“";
 color:#000;
 }
 #msgBox .list .times a{float:right;
