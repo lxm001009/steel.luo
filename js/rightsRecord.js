@@ -102,8 +102,8 @@
 	{ 'seq': '200', 'name': '杨真杰', 'unit': '2栋', 'floor': '2栋26层', 'room': '2-2604', 'tel': '13650062576', 'pay': '300' }]
 }
 
-function TotalPay(rightsPay, id) {
-	var myRightsPay = rightsPay / 4;
+function TotalPay(rightsPay, id,fentan=4) {
+	var myRightsPay = rightsPay / fentan;
 	total = total - myRightsPay;
 	var totalPayHtml = `<tr class="green">
                     <td>总计</td>
